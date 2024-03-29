@@ -56,4 +56,6 @@
 
     <bean id="session" factory-bean="sqlSessionFactory" factory-method="openSession" scope="prototype"> </bean>
 
+    <bean class="com.example.postprocessor.MyBeanFactoryPostProcessor"></bean>
+
 </beans>
