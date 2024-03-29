@@ -14,9 +14,7 @@
         </property>
     </bean>
 
-    <bean id="userServiceInit" class="com.example.service.impl.UserServiceInitImpl" init-method="init" destroy-method="destroy">
-        <property name="userDao" ref="userDao"></property>
-    </bean>
+    <bean id="userServiceInit" class="com.example.service.impl.UserServiceInitImpl" autowire="byType"></bean>
 
     <bean id="userServiceArgs" class="com.example.service.impl.UserServiceArgsImpl" init-method="init" destroy-method="destroy">
         <constructor-arg name="name" value="xj"/>
