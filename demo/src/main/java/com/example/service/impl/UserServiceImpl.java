@@ -9,4 +9,10 @@ public class UserServiceImpl implements UserService {
         System.out.println("set user dao:"+userDao);
         this.userDao = userDao;
     }
+    public void init() {
+        System.out.println("init UserServiceImpl");
+    }
+    public void destroy() {
+        System.out.println("destroy UserServiceImpl");
+    }
 }
