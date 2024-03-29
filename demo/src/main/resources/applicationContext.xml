@@ -16,7 +16,6 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
-    <bean id="userDaoFactory" class="com.example.factory.InstanceMethodFactory" ></bean>
-    <bean id="userDao" factory-bean="userDaoFactory" factory-method="userDao" />
+    <bean id="userDao" class="com.example.factory.MyFactoryBean"></bean>
 
 </beans>
