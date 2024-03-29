@@ -16,6 +16,6 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
-    <bean id="userDao" class="com.example.dao.impl.UserDaoImpl" />
+    <bean id="userDao" class="com.example.factory.StaticMethodFactory" factory-method="userDao" />
 
 </beans>
