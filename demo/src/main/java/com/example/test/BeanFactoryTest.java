@@ -14,5 +14,8 @@ public class BeanFactoryTest {
         // 4. get bean by id
         Object userService = beanFactory.getBean("userService");
         System.out.println(userService);
+
+        Object userDao = beanFactory.getBean("userDao");
+        System.out.println(userDao);
     }
 }
