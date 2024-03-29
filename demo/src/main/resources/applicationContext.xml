@@ -39,12 +39,12 @@
         <constructor-arg name="password" value="root"></constructor-arg>
     </bean>
 
-    <bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
+<!--    <bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
         <constructor-arg name="pattern" value="yyyy-MM-dd"></constructor-arg>
     </bean>
-    <bean id="date" factory-bean="simpleDateFormat" factory-method="parse">
+    <bean id="simpleDate" factory-bean="simpleDateFormat" factory-method="parse">
         <constructor-arg name="source" value="2024-11-18"></constructor-arg>
-    </bean>
+    </bean>-->
 
     <bean id="inputStream" class="org.apache.ibatis.io.Resources" factory-method="getResourceAsStream">
         <constructor-arg name="resource" value="mybatis-config.xml"></constructor-arg>
@@ -57,5 +57,7 @@
     <bean id="session" factory-bean="sqlSessionFactory" factory-method="openSession" scope="prototype"> </bean>
 
     <bean class="com.example.postprocessor.MyBeanFactoryPostProcessor"></bean>
+    <bean class="com.example.postprocessor.MyBeanPostProcessor"></bean>
+    <bean class="com.example.postprocessor.TimeLogBeanPostProcessor"></bean>
 
 </beans>

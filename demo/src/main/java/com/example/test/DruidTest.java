@@ -25,8 +25,8 @@ public class DruidTest {
 
         // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         // Date parse = simpleDateFormat.parse("2023-10-11");
-        Object date = applicationContext.getBean("date");
-        System.out.println(date);
+        // Object date = applicationContext.getBean("simpleDate");
+        // System.out.println(date);
 
         // mybatis
         // static factory method
