@@ -11,6 +11,9 @@ public class ApplicationContextTest {
         Object userServiceInit = applicationContext.getBean("userServiceInit");
         System.out.println(userServiceInit);
 
+        Object userServiceArgs = applicationContext.getBean("userServiceArgs");
+        System.out.println(userServiceArgs);
+
         applicationContext.close();
     }
 }

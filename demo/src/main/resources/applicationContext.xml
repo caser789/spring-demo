@@ -11,6 +11,11 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
+    <bean id="userServiceArgs" class="com.example.service.impl.UserServiceArgsImpl" init-method="init" destroy-method="destroy">
+        <constructor-arg name="name" value="xj"/>
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+
     <bean id="userDao" class="com.example.dao.impl.UserDaoImpl" />
 
 </beans>
