@@ -46,5 +46,14 @@
         <constructor-arg name="source" value="2024-11-18"></constructor-arg>
     </bean>
 
+    <bean id="inputStream" class="org.apache.ibatis.io.Resources" factory-method="getResourceAsStream">
+        <constructor-arg name="resource" value="mybatis-config.xml"></constructor-arg>
+    </bean>
+    <bean id="builder" class="org.apache.ibatis.session.SqlSessionFactoryBuilder"></bean>
+    <bean id="sqlSessionFactory" factory-bean="builder" factory-method="build">
+        <constructor-arg name="inputStream" ref="inputStream"></constructor-arg>
+    </bean>
+
+    <bean id="session" factory-bean="sqlSessionFactory" factory-method="openSession" scope="prototype"> </bean>
 
 </beans>
