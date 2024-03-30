@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+
+    <bean id="annoUserService" class="com.example.service.impl.AnnoUserServiceImpl"></bean>
+    <bean id="myAdvice" class="com.example.advice.MyAdvice"></bean>
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="execution(void com.example.service.impl.AnnoUserServiceImpl.show1())"/>
+        <aop:aspect ref="myAdvice" >
+            <aop:before method="before" pointcut-ref="myPointcut"></aop:before>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
