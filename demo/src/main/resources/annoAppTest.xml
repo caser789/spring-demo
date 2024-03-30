@@ -11,11 +11,18 @@
 
     <bean id="annoUserService" class="com.example.service.impl.AnnoUserServiceImpl"></bean>
     <bean id="myAdvice" class="com.example.advice.MyAdvice"></bean>
+    <bean id="myAdvice2" class="com.example.advice.MyAdvice2"></bean>
     <aop:config>
         <aop:pointcut id="myPointcut" expression="execution(void com.example.service.impl.AnnoUserServiceImpl.show1())"/>
         <aop:aspect ref="myAdvice" >
             <aop:before method="before" pointcut-ref="myPointcut"></aop:before>
         </aop:aspect>
     </aop:config>
+
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="execution(void com.example.service.impl.AnnoUserServiceImpl.show1())"/>
+        <aop:advisor advice-ref="myAdvice2" pointcut-ref="myPointcut"></aop:advisor>
+    </aop:config>
+
 
 </beans>
